@@ -17,7 +17,7 @@ public class CreateOrderCommandHandler : IRequestHandler<CreateOrderCommand, Gui
     public async Task<Guid> Handle(CreateOrderCommand request, CancellationToken cancellationToken)
     {
         var order = new OrderAggregate(request.CustomerName);
-        await _orderRepository.SaveOrderAsync(order.Order);
+        await _orderRepository.SaveOrderAsync(order);
         return order.Order.Id;
     }
 }

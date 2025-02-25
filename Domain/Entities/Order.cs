@@ -5,6 +5,8 @@ public class Order
     public Guid Id { get; private set; }
     public string CustomerName { get; private set; }
     public List<OrderItem> Items { get; private set; }
+    
+    public Order() {}
 
     public Order(string customerName)
     {
